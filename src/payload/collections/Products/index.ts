@@ -3,7 +3,8 @@ import type { CollectionConfig } from 'payload/types'
 const Products: CollectionConfig = {
   slug: 'products',
   admin: {
-    useAsTitle: 'title',
+    useAsTitle: 'Title',
+    defaultColumns: ['Title', 'Description', 'ProductImage'],
   },
   access: {
     read: () => true,
@@ -12,10 +13,12 @@ const Products: CollectionConfig = {
     {
       name: 'Title',
       type: 'text',
+      required: true,
     },
     {
       name: 'Description',
       type: 'text',
+      required: true,
     },
     {
       name: 'ProductImage',
