@@ -9,6 +9,7 @@
 export interface Config {
   collections: {
     pages: Page;
+    products: Product;
     posts: Post;
     projects: Project;
     media: Media;
@@ -616,6 +617,19 @@ export interface Project {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "products".
+ */
+export interface Product {
+  id: string;
+  Title?: string | null;
+  Description?: string | null;
+  ProductImage: string | Media;
+  Price?: number | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
